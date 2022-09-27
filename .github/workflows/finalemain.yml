@@ -40,5 +40,5 @@ jobs:
  azure-file-volume-mount-path: {{ secrets.VOLUME_PATH }}
  azure-file-volume-share-name: {{ secrets.VOLUME_SHARE_NAME }}
  name: getting-started-github
- location: 'west-europe'
+ location: 'west europe'
  ports:'3000'
