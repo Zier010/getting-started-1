@@ -1,5 +1,7 @@
 on: [push]
+
 name: GettingStarted_Container_WorkflowTest
+
 jobs:
  build-and-deploy:
  runs-on: ubuntu-latest
