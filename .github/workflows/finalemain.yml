@@ -20,13 +20,15 @@ jobs:
  login-server: ${{ secrets.REGISTRY_LOGIN_SERVER }}
  username: ${{ secrets.REGISTRY_USERNAME }}
  password: ${{ secrets.REGISTRY_PASSWORD }}
- azure-file-volume-account-key: {{ secrets.VOLUME_KEY }}
- azure-file-volume-account-name: {{ secrets.VOLUME_ACC_NAME }}
- azure-file-volume-mount-path: {{ secrets.VOLUME_PATH }}
- azure-file-volume-share-name: {{ secrets.VOLUME_SHARE_NAME }}
+
 
  - run: |
  docker build . -t ${{ secrets.REGISTRY_LOGIN_SERVER secrets.REPOSITORY_NAME }}:${{ github.run_number }}
  docker push ${{ secrets.REGISTRY_LOGIN_SERVER }}/${{ }}:${{ github.run_number }}
+ 
  - name: 'Deploy to Azure Container Instances'
  uses: 'azure/aci-deploy@v1'
+ azure-file-volume-account-key: {{ secrets.VOLUME_KEY }}
+ azure-file-volume-account-name: {{ secrets.VOLUME_ACC_NAME }}
+ azure-file-volume-mount-path: {{ secrets.VOLUME_PATH }}
+ azure-file-volume-share-name: {{ secrets.VOLUME_SHARE_NAME }}
